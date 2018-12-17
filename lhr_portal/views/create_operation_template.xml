@@ -1,0 +1,111 @@
+<odoo>
+	<template id="create_operation">
+		<t t-call="website.layout">
+			<link href="../static/src/css/lhr_portal.css" rel="stylesheet" type="text/css"/>
+
+			<div class="paper_background">
+				<div class="paper">
+
+					<h1 style="color:#33cba5;margin-bottom:20px;margin-top:20px;font-family:museo-sans,sans-serif;">
+						<div style="center">Contact</div>
+					</h1>
+					<br/>
+					<form action="/portail-lhr/lhr-created" method="post" enctype="multipart/form-data">
+
+						<input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+
+						<div class="form-group form-field o_website_form_required_custom">
+							<table class="large">
+								<tr>
+									<td>
+										<input 
+											type="text" 
+											id="nom" 
+											class="form-control o_website_form_input"
+											required="True" 
+											title="Nom" 
+											name="nom" 
+											placeholder="Nom *"/>
+									</td>
+									<td>
+										<input 
+											type="text" 
+											id="prenom" 
+											class="form-control o_website_form_input"
+											required="True" 
+											title="Prenom" 
+											name="prenom" 
+											placeholder="Prénom *"/>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input 
+											type="text" 
+											id="telephone" 
+											class="form-control o_website_form_input"
+											required="True" 
+											title="Telephone" 
+											name="telephone" 
+											placeholder="Téléphone *"/>
+									</td>
+									<td>
+										<input 
+											type="text" 
+											id="email" 
+											class="form-control o_website_form_input"
+											required="True" 
+											title="Email" 
+											name="email" 
+											placeholder="Email *"/>
+									</td>
+								</tr>
+							</table>
+						</div>
+
+						<div class="form-group form-field o_website_form_required_custom">
+							<input list="genre" name="sexe" placeholder="Sexe" style="cursor:default; min-width:100%"/>
+							<datalist id="genre">
+								<option value="Homme"/>
+								<option value="Femme"/>
+							</datalist>
+						</div>
+
+						<div class="form-group form-field o_website_form_required_custom">
+							<input 
+								type="number" 
+								id="age" 
+								class="form-control o_website_form_input"
+								title="Âge" 
+								name="age" 
+								placeholder="Âge"/>
+						</div>
+
+						<div class="form-group form-field o_website_form_required_custom">
+							<input 
+								type="checkbox" 
+								id="greffe" 
+								value="greffe" 
+								name="greffe"/> J'ai déjà eu recours à la greffe de cheveux
+						</div>
+
+						<div class="form-group form-field o_website_form_required_custom">
+							<textarea
+								type="text"
+								name="message" 
+								rows = "7" 
+								cols = "50" 
+								maxlength="5000"
+								class="form-control o_website_form_input"
+								required="True"
+								placeholder="Votre message (max. 5000 caractères)"></textarea> 
+						</div>
+						<div class="form-group" align="right">
+							<button class="btn btn-block btn-primary o_website_form_send" style="max-width: 20%;">Envoyer</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</t>
+	</template>
+</odoo>
