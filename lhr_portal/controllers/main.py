@@ -1,17 +1,20 @@
 from odoo import http
 from odoo.http import request
 
-class Main(http.Controller):
+from odoo.addons.website.controllers.main import Website
 
-	@http.route('/portail-lhr', auth='public', website=True)
-	def portail_lhr(self):
+class Main(Website):
+
+	#homepage
+	@http.route('/', type='http', auth='public', website=True)
+	def index(self, **kw):
 		return request.render('lhr_portal.accueil', {} )
 
-	@http.route('/portail-lhr/formulaire-contact', auth='public', website=True)
+	@http.route('/formulaire-contact', auth='public', website=True)
 	def formulaire_devis(self):
 		return request.render('lhr_portal.create_operation', {} )
 
-	@http.route('/portail-lhr/lhr-created', type='http', auth='public', website=True)
+	@http.route('/lhr-created', type='http', auth='public', website=True)
 	def create_devis(self, **post):
 
 		#Create contact first
@@ -30,4 +33,4 @@ class Main(http.Controller):
 			'm_client': int(contact.id),
 			'm_message': post.get('message'),
 		})
-		return http.request.redirect('/portail-lhr')
+		return http.request.redirect('/')

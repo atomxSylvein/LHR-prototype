@@ -14,7 +14,7 @@
           <div class="container">
             <div class="row">
               <div class="col-lg-4">
-                <h5>Lisbola Hair Restoration à votre service</h5>
+                <h5 style="font-size=1.09375rem; line-height:1.2;">Lisbola Hair Restoration à votre service</h5>
                 <ul class="list-unstyled">
                   <li>
                     <a href="http://www.lisboahair.com/" data-original-title="" title="" aria-describedby="tooltip980012">Site web d'accueil</a>
@@ -32,7 +32,7 @@
               </div>
 
               <div class="col-lg-4" id="connect">
-                <h5 style="color: rgb(33, 37, 41);">Clinique LHR</h5>
+                <h5 style="color: rgb(33, 37, 41); font-size=1.09375rem; line-height:1.2;">Clinique LHR</h5>
                 <ul class="list-unstyled">
                   <li data-original-title="" title="" aria-describedby="tooltip779555">Avenida Sidonio Pais, N°8, 5°</li>
                   <li data-original-title="" title="" aria-describedby="tooltip779555">Métro : PARQUE</li>
