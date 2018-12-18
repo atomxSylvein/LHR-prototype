@@ -9,7 +9,7 @@
 
 		<!-- Replace footer --> 
 		<xpath expr="//div[@id='wrapwrap']/header" position="replace">
-			<nav class="navbar navbar-expand-md" style="background-color:white;color:#212529;">
+			<nav class="navbar navbar-expand-md" style="background-color:white;color:#212529;padding: 0;">
 	            <div class="container">
 	                <a href="/portail-lhr" class="navbar-brand logo">
 	                    <img src="http://www.lisboahair.com/site/images/interface/logo.jpg" style="width: auto;height: 3.5rem;max-width:none;"/>
@@ -18,9 +18,9 @@
 	                    <span class="navbar-toggler-icon"/>
 	                </button>
 	                <div class="collapse navbar-collapse" id="top_menu_collapse">
-	                    <!-- FIXME We want menu to open to the right by default (except cases handled in JS) -->
 	                    <ul class="nav navbar-nav ml-auto text-right" id="top_menu">
-	                        <li class="nav-item divider" t-ignore="true" t-if="not user_id._is_public()"/>
+	                        <li class="nav-item divider"/>
+	                        <!-- Afficher le menu utilisateur si l'utilisateur est connu -->
 	                        <li class="nav-item dropdown" t-ignore="true" t-if="not user_id._is_public()">
 	                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
 	                                <b>
@@ -30,6 +30,10 @@
 	                            <div class="dropdown-menu js_usermenu" role="menu">
 	                                <a id="o_logout" class="dropdown-item" t-attf-href="/web/session/logout?redirect=/" role="menuitem">Déconnexion</a>
 	                            </div>
+	                        </li>
+	                        <!-- Sinon, afficher "se connecter" -->
+	                        <li class="nav-item" t-ignore="true" t-if="user_id._is_public()">
+	                            <a href="/web/login" class="nav-link">Se connecter</a>
 	                        </li>
 	                    </ul>
 	                </div>
