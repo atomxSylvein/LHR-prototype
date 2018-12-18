@@ -4,7 +4,7 @@
 			<link href="../static/src/css/lhr_portal.css" rel="stylesheet" type="text/css"/>
 			<t t-set="pageName" t-value="'homepage'"/>
 			<div id="wrap" class="oe_structure oe_empty" style="margin-top: 5px;">
-				<section class="s_features_grid oe_img_bg oe_custom_bg pb256 pt208" style="background-image: url(&quot;https://i.ytimg.com/vi/E9PK3lDxuBM/maxresdefault.jpg&quot;);">
+				<section class="s_features_grid oe_img_bg oe_custom_bg" style="background-size: 100% 150%; height: 600px; padding-top: 100px; background-image: url(&quot;https://i.ytimg.com/vi/E9PK3lDxuBM/maxresdefault.jpg&quot;);">
 					<div class="container">
 						<div class="row">
 							<div class="col-lg-6 s_col_no_bgcolor pb24">
