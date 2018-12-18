@@ -11,7 +11,7 @@
 		<xpath expr="//div[@id='wrapwrap']/header" position="replace">
 			<nav class="navbar navbar-expand-md" style="background-color:white;color:#212529;padding: 0;">
 	            <div class="container">
-	                <a href="/portail-lhr" class="navbar-brand logo">
+	                <a href="/" class="navbar-brand logo">
 	                    <img src="http://www.lisboahair.com/site/images/interface/logo.jpg" style="width: auto;height: 3.5rem;max-width:none;"/>
 	                </a>
 	                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#top_menu_collapse">
