@@ -35,7 +35,7 @@ class Operation(models.Model):
 
 	m_name = fields.Char(compute='_compute_name', string="Nom de l'opération", store=True)
 	m_client_nom_civil = fields.Char(string="Nom avec la civilité 'M.' ou 'Mme.'")
-	m_chirurgien = fields.Many2one('res.partner', string="Chirurgien")
+	m_chirurgien = fields.Many2one('hr.employee', string="Chirurgien")
 	m_client = fields.Many2one('res.partner', string="Client", required=True)
 	m_date_prevu = fields.Datetime(string="Date prévue de l'opération")
 	m_message = fields.Text(string="Message du formulaire")

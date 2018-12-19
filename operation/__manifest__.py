@@ -7,6 +7,7 @@
     'description': """This module implements the notion of graft operation""",
 
     'author': "AtomX System",
+    
     'website': "http://atomxsystem.eu",
 
     # Categories can be used to filter modules in modules listing
@@ -16,7 +17,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'contacts'],
+    'depends': ['base', 'contacts', 'hr'],
 
     # always loaded
     'data': [
