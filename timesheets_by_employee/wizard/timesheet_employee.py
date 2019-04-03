@@ -37,5 +37,9 @@ class EmployeeTimesheet(models.TransientModel):
         rec = self.browse(data)
         data = {}
         data['form'] = rec.read(['employee', 'from_date', 'to_date'])
-        return self.env['report'].get_action(self.browse(data), 'timesheets_by_employee.report_timesheets', data=data)
+        #report_obj = self.env['report']
+        #report_doc = report_obj.get_action(self.browse(data), 'timesheets_by_employee.report_timesheets', data=data)
+        #report_doc = report_obj._get_report_from_name('timesheets_by_employee.report_timesheets')
+
+        return self.env.ref('timesheets_by_employee.report_timesheets').report_action(self, data=data)
 
