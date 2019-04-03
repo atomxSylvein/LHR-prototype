@@ -41,5 +41,5 @@ class EmployeeTimesheet(models.TransientModel):
         #report_doc = report_obj.get_action(self.browse(data), 'timesheets_by_employee.report_timesheets', data=data)
         #report_doc = report_obj._get_report_from_name('timesheets_by_employee.report_timesheets')
 
-        return self.env.ref('action_report_print_timesheets').report_action(self, data=data)
+        return self.env.ref('action_report_print_timesheets').report_action(self, data=data, config=False)
 
