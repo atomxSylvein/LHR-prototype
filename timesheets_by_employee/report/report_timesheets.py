@@ -72,7 +72,7 @@ class ReportTimesheet(models.AbstractModel):
         elif docs.from_date:
             period = " To " + str(docs.to_date)
         docargs = {
-           'doc_ids': self.ids,
+           'doc_ids': docids,#self.ids,
            'doc_model': self.model,
            'docs': docs,
            'timesheets': timesheets[0],
