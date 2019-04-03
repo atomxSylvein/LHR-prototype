@@ -62,7 +62,7 @@ class ReportTimesheet(models.AbstractModel):
         identification = []
         for i in self.env['hr.employee'].search([('user_id', '=', docs.employee[0].user_id.id)]):
             if i:
-                identification.append({'id': i.identification_id, 'name': i.name_related})
+                identification.append({'id': i.id, 'name': i.name})
         timesheets = self.get_timesheets(docs)
         period = None
         if docs.from_date and docs.to_date:
