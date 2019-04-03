@@ -25,8 +25,7 @@ from odoo import models, fields, api
 class ReportTimesheet(models.AbstractModel):
     _name = 'report.timesheets_by_employee.report_timesheets'
 
-    @api.model
-    def _get_report_values(self, docs):
+    def get_timesheets(self, docs):
         """input : name of employee and the starting date and ending date
                 output: timesheets by that particular employee within that period and the total duration"""
 
@@ -54,7 +53,7 @@ class ReportTimesheet(models.AbstractModel):
         return [records, total]
 
     @api.model
-    def render_html(self, docids, data=None):
+    def _get_report_values(self, docids, data=None):
         """we are overwriting this function because we need to show values from other models in the report
                 we pass the objects in the docargs dictionary"""
 
@@ -64,7 +63,7 @@ class ReportTimesheet(models.AbstractModel):
         for i in self.env['hr.employee'].search([('user_id', '=', docs.employee[0].user_id.id)]):
             if i:
                 identification.append({'id': i.identification_id, 'name': i.name_related})
-        timesheets = self._get_report_values(docs)#get_timesheets(docs)
+        timesheets = self.get_timesheets(docs)
         period = None
         if docs.from_date and docs.to_date:
             period = "From " + str(docs.from_date) + " To " + str(docs.to_date)

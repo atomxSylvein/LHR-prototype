@@ -21,7 +21,7 @@
 ##############################################################################
 {
     'name': 'Timesheet PDF Report',
-    'version': '9.0.1.0.6',
+    'version': '9.0.1.0.7',
     "category": "Generic Modules/Human Resources",
     'sequence': 25,
     'summary': 'Timesheet PDF Report of Employees',
