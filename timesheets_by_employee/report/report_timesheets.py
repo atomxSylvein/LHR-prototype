@@ -25,7 +25,8 @@ from odoo import models, fields, api
 class ReportTimesheet(models.AbstractModel):
     _name = 'report.timesheets_by_employee.report_timesheets'
 
-    def get_timesheets(self, docs):
+    @api.model
+    def _get_report_values(self, docs):
         """input : name of employee and the starting date and ending date
                 output: timesheets by that particular employee within that period and the total duration"""
 
@@ -63,7 +64,7 @@ class ReportTimesheet(models.AbstractModel):
         for i in self.env['hr.employee'].search([('user_id', '=', docs.employee[0].user_id.id)]):
             if i:
                 identification.append({'id': i.identification_id, 'name': i.name_related})
-        timesheets = self.get_timesheets(docs)
+        timesheets = self._get_report_values(docs)#get_timesheets(docs)
         period = None
         if docs.from_date and docs.to_date:
             period = "From " + str(docs.from_date) + " To " + str(docs.to_date)
