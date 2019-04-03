@@ -81,4 +81,4 @@ class ReportTimesheet(models.AbstractModel):
            'identification': identification,
            'period': period,
         }
-        return self.env['report'].render('timesheets_by_employee.report_timesheets', docargs)
+        return docargs#self.env['report'].render('timesheets_by_employee.report_timesheets', docargs)
